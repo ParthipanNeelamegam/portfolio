@@ -16,11 +16,17 @@ export default function HireForm() {
       message,
     };
 
-    await fetch(`${import.meta.env.VITE_API_URL}/api/enquiry`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const API_URL = import.meta.env.VITE_API_URL;
+    console.log("test",API_URL);
+    
+
+    await fetch(`${API_URL}/api/enquiry`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
     alert("Enquiry sent successfully!");
 
