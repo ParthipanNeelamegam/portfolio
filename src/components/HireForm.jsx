@@ -16,7 +16,7 @@ export default function HireForm() {
       message,
     };
 
-    await fetch("http://localhost:5000/api/enquiry", {
+    await fetch(`${import.meta.env.PORTFOLIO_BACKEND_PORT}/api/enquiry`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
